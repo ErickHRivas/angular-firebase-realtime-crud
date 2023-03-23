@@ -15,23 +15,8 @@ export class HistoryComponent {
   // public historyList: History[] = []
   historyList: Observable<any[]>
   constructor (private readonly db: AngularFireDatabase, private readonly historyService: HistoryService) {
-    // this.historyList = this.historyService.getData()
-    // this.historyList = firestore.collection('history').valueChanges()
-    // this.historyList = this.db.list('history').valueChanges()
     this.historyList = this.historyService.getAllTimeReal()
-    // this.getDataTimeReal()
-  //   // const data: History = {
-  //   //   id: '2',
-  //   //   date: '10/20/20',
-  //   //   action: 'add',
-  //   //   data: ''
-  //   // }
-  //   // this.firebase.createData(data)
   }
-
-  // getDataTimeReal (): void {
-  //   // this.historyService.getAllTimeReal()
-  // }
 
   getClassByAction (action: string): string {
     const msg: any = {
