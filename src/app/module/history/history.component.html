@@ -1,0 +1,30 @@
+<div class="col-12 mt-5">
+  <div class="card">
+    <div class="card-body">
+      <div class="container overflow-auto">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Fecha</th>
+              <th scope="col">Mensaje</th>
+              <!-- <th scope="col">Dato</th> -->
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let historyItem of historyList | async; let historyIndex = index ">
+              <th scope="row">{{historyIndex+1}}</th>
+              <td>{{historyItem.date}}</td>
+              <td>
+                <span class="badge" [ngClass]="getClassByAction(historyItem.action)">
+                  {{historyItem.msg}}
+                </span>
+              </td>
+              <!-- <td>{{historyItem.data}}</td> -->
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+
+version: '3'
+
+services:
+  angular:
+    container_name: angular_crud
+    build: .
+    working_dir: /app
+    volumes:
+      - "/app/node_modules"
+      - ".:/app"
+    ports:
+      - "4200:4200"
+      - "49153:49153"

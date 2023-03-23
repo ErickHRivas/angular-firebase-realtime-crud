@@ -1,0 +1,65 @@
+<div class="col-12">
+  <div class="card">
+    <div class="card-body">
+      <div class="container">
+        <form (submit)="onSubmit($event)">
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Nombre</span>
+            <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" name="name" [(ngModel)]="person.name">
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Apellido Paterno</span>
+            <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" name="surnameFather" [(ngModel)]="person.surnameFather">
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Apellido Materno</span>
+            <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" name="surnameMother" [(ngModel)]="person.surnameMother">
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Edad</span>
+            <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" name="age" [(ngModel)]="person.age">
+          </div>
+          <button class="btn btn-primary" type="submit" >Guardar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="col-12 mt-5">
+  <div class="card">
+    <div class="card-body">
+      <div class="container">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Apellido Paterno</th>
+              <th scope="col">Apellido Materno</th>
+              <th scope="col">Edad</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let personItem of personList, let personIndex = index ">
+              <th scope="row">{{personIndex+1}}</th>
+              <td>{{ personItem.name }}</td>
+              <td>{{ personItem.surnameFather }}</td>
+              <td>{{ personItem.surnameMother }}</td>
+              <td>{{ personItem.age }} años</td>
+              <td>
+                <div class="">
+                  <button class="btn btn-danger me-md-2" (click)="delete(personItem.key??'')" >Eliminar</button>
+                  <button class="btn btn-warning" (click)="show(personItem.key??'')">Editar</button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+

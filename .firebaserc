@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "crud-327dc": {
+      "hosting": {
+        "crud": [
+          "crud-327dc"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "crud-327dc"
+  }
+}
